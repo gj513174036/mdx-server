@@ -5,8 +5,8 @@ from pattern.en import lemma
 import sys
 
 if __name__=="__main__":
-    if len(sys.argv) < 1 :
-        print "lemma.py word"
+    if len(sys.argv) < 2 :
+        print("lemma.py word")
         exit(0)
     word=sys.argv[1]
-    print lemma(word)
+    print(lemma(word))

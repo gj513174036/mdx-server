@@ -14,6 +14,8 @@ def get_definition_mdx(word, builder):
         fp.close()
         print("lemma: " + word)
         content = builder.mdx_lookup(word)
+    if not content:
+        return [b'']
     pattern = re.compile(r"@@@LINK=([\w\s]*)")
     rst = pattern.match(content[0])
     if rst is not None:
@@ -31,7 +33,7 @@ def get_definition_mdx(word, builder):
     try:
         # PyInstaller creates a temp folder and stores path in _MEIPASS
         # base_path = sys._MEIPASS
-        base_path = os.path.dirname(sys.executable)
+        base_path = os.path.dirname(os.path.abspath(__file__))
     except Exception:
         base_path = os.path.abspath(".")
             
