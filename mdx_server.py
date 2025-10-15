@@ -8,12 +8,6 @@ import json
 import sys
 
 
-if sys.version_info < (3, 0, 0):
-    import Tkinter as tk
-    import tkFileDialog as filedialog
-else:
-    import tkinter as tk
-    import tkinter.filedialog as filedialog
 
 from wsgiref.simple_server import make_server
 from file_util import *
